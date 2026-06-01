@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi sitio en GitHub Pages</title>
+
+  <title>LaLoncheria | Antojitos, lonches y comida rica</title>
 
   <style>
     * {
@@ -14,180 +14,499 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #111827, #1f2937, #2563eb);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      background: #fff7ed;
+      color: #1f2937;
     }
 
-    .container {
-      max-width: 900px;
+    header {
       width: 100%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      padding: 48px 32px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(12px);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #7c2d12;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .badge {
-      display: inline-block;
-      background: #22c55e;
-      color: #052e16;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 14px;
+    .logo {
+      font-size: 26px;
       font-weight: bold;
-      margin-bottom: 24px;
+      letter-spacing: 0.5px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
+    .logo span {
+      color: #facc15;
     }
 
-    p {
-      font-size: 18px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    .hero {
+      min-height: 88vh;
+      padding: 80px 8%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      background:
+        linear-gradient(rgba(124, 45, 18, 0.75), rgba(124, 45, 18, 0.75)),
+        url('https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 58px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: #facc15;
+    }
+
+    .hero-content p {
+      font-size: 21px;
       line-height: 1.6;
-      color: #e5e7eb;
-      margin-bottom: 28px;
+      max-width: 650px;
+      margin-bottom: 32px;
+      color: #fff7ed;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       gap: 16px;
-      justify-content: center;
       flex-wrap: wrap;
-      margin-top: 24px;
     }
 
     .btn {
+      display: inline-block;
       text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 14px;
+      padding: 15px 24px;
+      border-radius: 999px;
       font-weight: bold;
       transition: 0.2s ease;
+      font-size: 16px;
     }
 
     .btn-primary {
-      background: #3b82f6;
+      background: #22c55e;
       color: white;
     }
 
     .btn-primary:hover {
-      background: #2563eb;
+      background: #16a34a;
       transform: translateY(-2px);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #facc15;
+      color: #422006;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: #eab308;
       transform: translateY(-2px);
     }
 
-    .cards {
+    .hero-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1f2937;
+      padding: 32px;
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-card h2 {
+      color: #7c2d12;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .schedule {
+      background: #fff7ed;
+      border-radius: 18px;
+      padding: 18px;
+      border: 2px dashed #f97316;
+    }
+
+    .schedule strong {
+      color: #7c2d12;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      color: #7c2d12;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 40px;
+      gap: 22px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 22px;
-      text-align: left;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .menu-item {
+      background: white;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(124, 45, 18, 0.12);
+      border: 1px solid #fed7aa;
+      transition: 0.2s ease;
     }
 
-    .card h3 {
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(124, 45, 18, 0.18);
+    }
+
+    .menu-item .icon {
+      font-size: 42px;
+      margin-bottom: 14px;
+    }
+
+    .menu-item h3 {
+      color: #7c2d12;
+      font-size: 22px;
       margin-bottom: 10px;
-      font-size: 20px;
     }
 
-    .card p {
-      font-size: 15px;
-      margin-bottom: 0;
-      color: #d1d5db;
+    .menu-item p {
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .promo {
+      background: #7c2d12;
+      color: white;
+      text-align: center;
+    }
+
+    .promo h2 {
+      font-size: 42px;
+      margin-bottom: 14px;
+    }
+
+    .promo p {
+      font-size: 19px;
+      color: #ffedd5;
+      margin-bottom: 28px;
+    }
+
+    .contact {
+      background: #fff7ed;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 28px;
+      border-radius: 22px;
+      text-align: center;
+      border: 1px solid #fed7aa;
+      box-shadow: 0 12px 30px rgba(124, 45, 18, 0.12);
+    }
+
+    .contact-card h3 {
+      color: #7c2d12;
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: #6b7280;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      text-decoration: none;
+      background: #f97316;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .contact-card a:hover {
+      background: #ea580c;
     }
 
     footer {
-      margin-top: 36px;
-      font-size: 14px;
-      color: #cbd5e1;
+      background: #431407;
+      color: #ffedd5;
+      text-align: center;
+      padding: 28px 8%;
     }
 
-    @media (max-width: 600px) {
-      h1 {
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #22c55e;
+      color: white;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 32px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      z-index: 20;
+      transition: 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      background: #16a34a;
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .section-title h2,
+      .promo h2 {
         font-size: 32px;
       }
 
-      .container {
-        padding: 36px 22px;
+      .btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <span class="badge">GitHub Pages activo</span>
 
-    <h1>Bienvenido a mi sitio web</h1>
+  <header>
+    <div class="logo">La<span>Loncheria</span></div>
 
-    <p>
-      Este sitio fue publicado correctamente usando GitHub Pages.
-      Puedes editar este archivo <strong>index.html</strong> para personalizar
-      el contenido, agregar información de tu proyecto o mostrar tu portafolio.
-    </p>
+    <nav>
+      <a href="#menu">Menú</a>
+      <a href="#promo">Promos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://github.com/" target="_blank">
-        Ver GitHub
-      </a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Lonches, antojitos y comida rica al momento</h1>
 
-      <a class="btn btn-secondary" href="#info">
-        Más información
-      </a>
+      <p>
+        En <strong>LaLoncheria</strong> preparamos comida con sabor casero,
+        ideal para desayunar, comer algo rápido o pedir para llevar.
+        Escríbenos por WhatsApp y haz tu pedido fácil.
+      </p>
+
+      <div class="hero-buttons">
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/52AQUI_TU_NUMERO?text=Hola%20LaLoncheria,%20quiero%20hacer%20un%20pedido"
+          target="_blank">
+          Pedir por WhatsApp
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="AQUI_TU_FACEBOOK"
+          target="_blank">
+          Ver Facebook
+        </a>
+      </div>
     </div>
 
-    <section class="cards" id="info">
-      <div class="card">
-        <h3>Proyecto</h3>
-        <p>
-          Aquí puedes describir de qué trata tu proyecto, aplicación o sitio web.
-        </p>
+    <div class="hero-card">
+      <h2>¡Pide fácil y rápido!</h2>
+
+      <p>
+        Tenemos opciones deliciosas para todos los gustos:
+        lonches, tortas, hamburguesas, hot dogs, papas, bebidas y más.
+      </p>
+
+      <div class="schedule">
+        <p><strong>Horario:</strong> Lunes a sábado</p>
+        <p><strong>Servicio:</strong> Para comer aquí, recoger o pedir por WhatsApp</p>
+        <p><strong>Ubicación:</strong> AQUI_TU_DIRECCION</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-title">
+      <h2>Nuestro menú</h2>
+      <p>Comida práctica, rica y preparada con mucho sabor.</p>
+    </div>
+
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="icon">🥪</div>
+        <h3>Lonches</h3>
+        <p>Deliciosos lonches preparados al momento con ingredientes frescos.</p>
       </div>
 
-      <div class="card">
-        <h3>Objetivo</h3>
-        <p>
-          Explica qué problema resuelve o qué quieres mostrar con esta página.
-        </p>
+      <div class="menu-item">
+        <div class="icon">🍔</div>
+        <h3>Hamburguesas</h3>
+        <p>Hamburguesas con excelente sabor, ideales para quitar el antojo.</p>
       </div>
 
-      <div class="card">
-        <h3>Contacto</h3>
-        <p>
-          Agrega tu correo, redes sociales o enlaces importantes.
-        </p>
+      <div class="menu-item">
+        <div class="icon">🌭</div>
+        <h3>Hot Dogs</h3>
+        <p>Clásicos, ricos y perfectos para una comida rápida.</p>
       </div>
-    </section>
 
-    <footer>
-      © 2026 - Sitio publicado con GitHub Pages
-    </footer>
-  </main>
+      <div class="menu-item">
+        <div class="icon">🍟</div>
+        <h3>Papas y snacks</h3>
+        <p>Complementa tu pedido con papas, botanas y antojitos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo" id="promo">
+    <h2>¿Tienes hambre?</h2>
+
+    <p>
+      Escríbenos y pregunta por las promociones del día.
+      Te atendemos con gusto por WhatsApp o Facebook.
+    </p>
+
+    <a
+      class="btn btn-secondary"
+      href="https://wa.me/52AQUI_TU_NUMERO?text=Hola%20LaLoncheria,%20quiero%20saber%20las%20promociones%20del%20día"
+      target="_blank">
+      Preguntar promociones
+    </a>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="section-title">
+      <h2>Contáctanos</h2>
+      <p>Haz tu pedido, pregunta por el menú o síguenos en redes.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>Haz tu pedido directo y rápido por mensaje.</p>
+
+        <a
+          href="https://wa.me/52AQUI_TU_NUMERO?text=Hola%20LaLoncheria,%20quiero%20información"
+          target="_blank">
+          Enviar WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Facebook</h3>
+        <p>Síguenos para ver promos, horarios y novedades.</p>
+
+        <a href="AQUI_TU_FACEBOOK" target="_blank">
+          Ir a Facebook
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Ubicación</h3>
+        <p>Encuéntranos y ven por tu pedido.</p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=AQUI_TU_DIRECCION"
+          target="_blank">
+          Ver ubicación
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 LaLoncheria. Todos los derechos reservados.</p>
+    <p>Comida rica, rápida y con sabor casero.</p>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/52AQUI_TU_NUMERO?text=Hola%20LaLoncheria,%20quiero%20hacer%20un%20pedido"
+    target="_blank"
+    title="Enviar WhatsApp">
+    ☎
+  </a>
+
 </body>
 </html>
